@@ -1,0 +1,56 @@
+.object.adjust.adj2 {
+    margin-top:0px;
+    padding-top:0px
+}
+
+.header {
+    text-align: center;
+    color: #348a66b5;
+    word-wrap: break-word
+}
+
+#welcome-div p {
+    color:wheat;
+    text-align:center
+}
+
+.quick-access {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.quick-access h2 {
+    margin-bottom: 10px;
+    color: #c8640ebf;
+}
+
+#welcome-footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #d3d3d327;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+#welcome-footer p {
+    color: #8a3889c0;
+    font-size: 14px;
+    margin: 0;
+}
+
+.quick-btn {
+    background-color: #27674cb5;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quick-btn:hover {
+    background-color: #1a5630be;
+    color: #f0f0f0;
+}

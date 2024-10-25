@@ -1,0 +1,163 @@
+.comments-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #b56b31;
+}
+
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #9a9a9a1f;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-left {
+    margin-right: 15px;
+}
+
+.comment-right {
+    flex-grow: 1;
+    word-wrap: break-word;
+    max-width: 605px;
+}
+
+.profile-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-image:hover {
+    border: 2px solid #454521;
+    margin-right: -1.75px;
+    margin-top: -1.5px;
+    margin-left: -1px;
+    margin-bottom: -1.5px;
+}
+
+.comment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-div {
+    margin-bottom:11px;
+    max-width: 370px;
+    word-wrap: break-word;
+}
+
+.username a {
+    font-weight: bold;
+    color: #3085f4c8;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.username a:hover {
+    text-decoration: underline;
+    color: #4c9efdca;
+}
+
+.post-info a {
+    color: #267017d5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.post-info a:hover {
+    color: #368f22d5;
+    text-decoration: underline;
+}
+
+.date {
+    font-size: 12px;
+    color: #9f9f9fc8;
+}
+
+.comment-content {
+    font-size: 16px;
+    line-height: 1.5;
+    color: wheat;
+    word-wrap:break-word;
+    max-width:530px;
+    min-width:530px;
+}
+
+.comment-item:hover {
+    background-color: #b8b7b72c;
+    box-shadow: 0 3px 6px rgba(148, 49, 197, 0.2),
+                0 -3px 6px rgba(148, 49, 197, 0.2),
+                -3px 0 6px rgba(148, 49, 197, 0.2),
+                3px 0 6px rgba(148, 49, 197, 0.2);
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination {
+    color: #ffffffa0;
+    margin: 10px 0;
+}
+
+.pagination .step-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination .step-links a {
+    font-weight: bold;
+    font-size:16px
+}
+
+.pagination .step-links a:hover {
+    color: #b52d04e7;
+}
+
+.comment-content a:hover {
+    font-weight: bold
+}
+
+.heart-div {
+    color:#f700ffd5;
+    margin-top:-10px;
+    margin-right:5px;
+    font-size:25px;
+    display:flex;
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+}
+
+.num {
+    color:#e4e4e4c3;
+    margin-top:-2.7px;
+    margin-left:3px;
+    font-size:27px
+}

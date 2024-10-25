@@ -1,0 +1,55 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/sign_up.css' %}">
+{% endblock %}
+
+<form class="object adjust"
+    hx-post="{% url 'sign_up_form' %}"
+    {% if target_base %}
+      hx-target = "#base"
+      hx-vals='{"source":"navbar"}'
+    {% else %}
+      hx-target = "#sign-form"
+    {% endif %}
+
+    hx-trigger="submit"
+    hx-swap="show:bottom"
+    hx-include="form"
+    method="post">
+    {% csrf_token %}
+    <div class="object adjust">
+        <div class="object form">
+            <label for="first_name">Name:</label>
+            <input maxlength="150" type="text" id="first_name" name="first_name" value="{% if request.method == 'POST' %}{{ form.first_name.value }}{% endif %}" autocomplete="given-name" required >
+            <small class="error">{{ form.first_name.errors|join:' ' }}</small>
+        </div>
+        <div class="object form">
+            <label for="last_name">Surname:</label>
+            <input maxlength="150" type="text" id="last_name" name="last_name" value="{% if request.method == 'POST' %}{{ form.last_name.value }}{% endif %}" autocomplete="family-name" required>
+            <small class="error">{{ form.last_name.errors|join:' ' }}</small>
+        </div>
+        <div class="object form">
+            <label for="username">Username:</label>
+            <input maxlength="150" type="text" id="username" name="username" value="{% if request.method == 'POST' %}{{ form.username.value }}{% endif %}" autocomplete="username" required>
+            <small class="error">{{ form.username.errors|join:' ' }}</small>
+        </div>
+        <div class="object form">
+            <label for="email">Email:</label>
+            <input maxlength="150" type="email" id="email" name="email" value="{% if request.method == 'POST' %}{{ form.email.value }}{% endif %}" autocomplete="email" required>
+            <small class="error">{{ form.email.errors|join:' ' }}</small>
+        </div>
+        <div class="object form">
+            <label for="password1">Password:</label>
+            <input maxlength="150" type="password" id="password1" name="password1" value="{% if request.method == 'POST' %}{{ form.password1.value }}{% endif %}" autocomplete="new-password" required>
+            <small class="error">{{ form.password1.errors|join:' ' }}</small>
+        </div>
+        <div class="object form">
+            <label for="password2">Password Again:</label>
+            <input maxlength="150" type="password" id="password2" name="password2" value="{% if request.method == 'POST' %}{{ form.password2.value }}{% endif %}" autocomplete="new-password" required>
+            <small class="error">{{ form.password2.errors|join:' ' }}</small>
+        </div>
+        <div class="object adjust">
+            <button class="submit_btn" type="submit">Register</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,55 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}
+    {{ category.name }} Category's Posts
+{% endblock %}
+
+{% block content %}
+
+    {% block extra_styles %}
+        <link rel="stylesheet" href="{% static 'css/admin/category_posts.css' %}">
+    {% endblock %}
+
+    <div class="category-posts">
+        <h2>Posts for category: {{ category.name }}</h2>
+
+        {% if posts %}
+            <table class="post-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'admin:weblog_app_post_change' post.id %}">
+                                    {{ post.title }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin:weblog_app_customuser_change' post.author.id %}">
+                                    {{ post.author }}
+                                </a>
+                            </td>
+                            <td>{{ post.created_at|date:'Y-m-d H:i' }}</td>
+                            <td>
+                                <a class="btn edit-btn" href="{% url 'admin:weblog_app_post_change' post.id %}">Edit</a>
+                                <a class="btn delete-btn" href="{% url 'admin:weblog_app_post_delete' post.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No posts available for this category.</p>
+        {% endif %}
+
+        <a href="{% url 'admin:weblog_app_category_changelist' %}" class="btn back-btn">Back to Categories</a>
+    </div>
+{% endblock %}

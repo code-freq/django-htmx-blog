@@ -1,0 +1,26 @@
+{% load static %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/partials/settings.css' %}">
+{% endblock %}
+
+<div class="settings-section">
+    <h2>Account Settings</h2>
+
+    <div class="email-change-section">
+        <form method="POST" action="{% url 'change_email' %}">
+            {% csrf_token %}
+            <label for="email">Change Email Address</label>
+            <input type="email" id="email" name="email" class="email-input" value="{{ user.email }}" required>
+            <button type="submit" class="change-email-btn">Change Email</button>
+        </form>
+    </div>
+
+    <div class="delete-account-section">
+        <button class="delete-account-btn"
+                hx-get="{% url 'delete_account' %}"
+                hx-confirm="Are you sure? :(">
+            Delete Account
+        </button>
+    </div>
+</div>

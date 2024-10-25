@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Blog Freq
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <p class="{{ message.tags }}"><b>{{ message }}</b></p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if not user.is_authenticated %}
+    <div class="object header"><h1 class="header">Welcome to Blog Freq!</h1></div>
+
+    <div class="object" style="width: 97.5%">
+        <img src="{% static 'images/freq.png' %}" alt="Index Photo">
+    </div>
+
+    <div>
+        <p class="object right">
+            Hi there! Welcome to Blog Freq. I hope you are having a great day. This is a blog for
+            people who want to talk, share thoughts and experiences about frequencies. Enjoy!
+        </p>
+    </div>
+
+    <div class="object welcome" id="dynamic-content">
+        <button class="enter"
+                hx-get="{% url 'welcome_message' %}"
+                hx-trigger="click"
+                hx-target="#dynamic-content"
+                hx-swap="transition:true">
+            Enter Blog!
+        </button>
+    </div>
+    <div class="object adjust" id="sign-btns"></div>
+    <div class="object adjust" id="sign-form"></div>
+
+{% else %}
+
+    <h1 style="text-align:center;color:lightskyblue">10 Interesting Information about Frequencies</h1>
+    <div class="content">
+
+        <h2>1. Human Hearing Range and Ultrasound</h2>
+        <p>The average human hearing range is between <strong>20 Hz and 20,000 Hz (20 kHz)</strong>. Sounds below 20 Hz are called <em>infrasound</em>, and sounds above 20 kHz are called <em>ultrasound</em>.</p>
+        <p>Ultrasound is used in medical imaging because high frequencies can penetrate tissues and bounce back to create detailed images. Animals like bats and dolphins use ultrasound to <strong>navigate and hunt</strong> via echolocation.</p>
+
+        <h2>2. Schumann Resonance: Earth's Natural Frequency</h2>
+        <p>The <strong>Schumann resonance</strong> is Earth's "heartbeat"—a series of frequencies that result from lightning strikes interacting with the ionosphere. The base frequency is around <strong>7.83 Hz</strong>.</p>
+        <p>Some researchers believe that human brains might be sensitive to these frequencies, linking them to brain wave states and health.</p>
+
+        <h2>3. 432 Hz – The "Mystical" Frequency</h2>
+        <p>Some claim that music tuned to <strong>432 Hz</strong> is more <em>harmonious</em> and <em>soothing</em> than the modern standard of 440 Hz. This frequency is believed to have a calming and healing effect on the body and mind.</p>
+
+        <h2>4. Brainwave Frequencies and States of Consciousness</h2>
+        <p>The human brain operates in various frequency bands, which correspond to different states of consciousness:</p>
+        <ul>
+            <li><strong>Delta waves</strong> (0.5-4 Hz) – Deep sleep and healing</li>
+            <li><strong>Theta waves</strong> (4-8 Hz) – Dreaming, creativity, and meditation</li>
+            <li><strong>Alpha waves</strong> (8-12 Hz) – Relaxed, calm, and mindful state</li>
+            <li><strong>Beta waves</strong> (12-30 Hz) – Active thinking, focus, and problem-solving</li>
+            <li><strong>Gamma waves</strong> (30-100 Hz) – Higher-level information processing and peak mental activity</li>
+        </ul>
+
+        <h2>5. The "Cosmic Microwave Background"</h2>
+        <p>The <strong>Cosmic Microwave Background (CMB)</strong> is a frequency that can be detected from the <strong>Big Bang</strong>. It’s a form of electromagnetic radiation with a frequency of about <strong>160.4 GHz</strong>, providing valuable information about the origins of the universe.</p>
+
+        <h2>6. Resonance and Destruction</h2>
+        <p>Every object has a natural frequency at which it vibrates, called its <strong>resonant frequency</strong>. When exposed to this frequency, the object can absorb energy and potentially break apart.</p>
+        <p>A famous example of this is the <strong>Tacoma Narrows Bridge</strong>, which collapsed in 1940 due to wind-induced resonance.</p>
+
+        <h2>7. Music and Emotion</h2>
+        <p>Different frequencies in music evoke various emotions. <strong>Low frequencies</strong> (e.g., bass sounds) often create feelings of tension or power, while <strong>high frequencies</strong> (e.g., treble sounds) are uplifting and light. The interplay of frequency patterns in music is what drives emotional responses.</p>
+
+        <h2>8. Wi-Fi and Radio Frequencies</h2>
+        <p><strong>Wi-Fi</strong> operates at frequencies of <strong>2.4 GHz</strong> or <strong>5 GHz</strong>, enabling wireless communication. <strong>Radio frequencies (RF)</strong>, which range from 3 kHz to 300 GHz, are used for communications like AM/FM radio, TV broadcasts, and cellular networks.</p>
+
+        <h2>9. Brain Entrainment with Binaural Beats</h2>
+        <p><strong>Binaural beats</strong> occur when two slightly different frequencies are played in each ear. The brain interprets the difference as a third, phantom frequency, and this can synchronize brainwaves for relaxation, focus, or meditation.</p>
+
+        <h2>10. Frequencies and Color</h2>
+        <p>Light, which we see as color, is a form of electromagnetic wave with varying frequencies. <strong>Red light</strong> has the lowest frequency (~430 THz), while <strong>violet light</strong> has the highest frequency (~770 THz). The visible light spectrum is only a small part of the full electromagnetic spectrum.</p>
+    </div>
+
+{% endif %}
+
+{% endblock %}

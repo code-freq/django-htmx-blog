@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    All Users
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="users-list">
+    {% for user in users %}
+        <a href="{% url 'user_profile' user.id %}" style="text-decoration:none">
+            <div class="user-pp">
+                <img src="{{ user.profile_picture.url }}" class="pp-image">
+
+                <div class="user-info">
+                    <p class="username">{{ user.username }}</p>
+                    <p class="bio"><i><b>{{ user.bio }}</b></i></p>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/set-random-colors.js' %}"></script>
+
+{% endblock %}
+

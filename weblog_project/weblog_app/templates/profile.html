@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Your Profile
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+    <h1 class="header adjust">{{ user.username }}</h1>
+
+    <div class="profile-content">
+        <div class="profile-image-section">
+            <img src="{{ user.profile_picture.url }}" alt="Profile Image" class="profile-image">
+            <button class="change-picture-btn"
+                hx-get="{% url 'update_picture' %}"
+                hx-target='#dynamic-content'
+                hx-trigger="click">
+                Change Picture
+            </button>
+            <button class="remove-picture-btn"
+                hx-get="{% url 'delete_or_cancel' %}"
+                hx-target='#dynamic-content'
+                hx-trigger="click">
+                Remove Picture
+            </button>
+        </div>
+
+        <div class="profile-dynamic" id="dynamic-content">
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <p class="{{ message.tags }}"><b>{{ message }}</b></p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="profile-details">
+            <p style="color:#652659"><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Name:</strong> {{ user.first_name }}</p>
+            <p><strong>Surname:</strong> {{ user.last_name }}</p>
+            <p class="bio-text"><strong>Bio:</strong> {{ user.bio }}</p>
+            <button class="edit-profile-btn"
+                hx-get="{% url 'update_profile' %}"
+                hx-target='#dynamic-content'
+                hx-trigger="click">
+                Edit Profile
+            </button>
+            <button class="settings-btn"
+                hx-get="{% url 'account_settings' %}"
+                hx-target='#dynamic-content'
+                hx-trigger="click">
+                Account Settings
+            </button>
+        </div>
+    </div>
+
+    <hr>
+</div>
+
+{% endblock %}

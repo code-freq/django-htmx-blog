@@ -1,0 +1,28 @@
+button.sign_in {
+    background-color: #cf8a3b;
+    color: #535353;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+button.sign_in:hover {
+    background-color: #b15615;
+}
+
+button.sign_up:hover {
+    background-color: #174478;
+}
+
+button.sign_up {
+    background-color: #247193;
+    color: #c8c1c1;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+.object.welcome {
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}

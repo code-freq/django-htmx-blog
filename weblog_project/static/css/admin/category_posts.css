@@ -1,0 +1,72 @@
+.category-posts {
+    margin: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.post-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+.post-table th, .post-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.post-table th {
+    background-color: #f4f4f425;
+    font-weight: bold;
+}
+
+.post-table tr:nth-child(even) {
+    background-color: #f9f9f937;
+}
+
+.btn {
+    padding: 6px 12px;
+    text-decoration: none;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+a.btn  {
+    color:white
+}
+
+.edit-btn {
+    background-color: #2196F3;
+}
+
+.edit-btn:hover {
+    background-color: #0b7dda;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #e60000;
+}
+
+.back-btn {
+    background-color: #555;
+}
+
+.back-btn:hover {
+    background-color: #333;
+}

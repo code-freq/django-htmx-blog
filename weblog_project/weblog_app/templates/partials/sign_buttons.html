@@ -1,0 +1,27 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/sign_buttons.css' %}">
+{% endblock %}
+
+<div class="object welcome">
+    <button class="sign_up"
+        hx-get="{% url 'sign_up' %}"
+        hx-target='#sign-form'
+        hx-trigger="click"
+        hx-swap="show:#base:bottom transition:true"
+        onclick="clearInnerHTML('error-msg')"
+        style="color: white">
+        Sign Up
+    </button>
+    <button class="sign_in"
+        hx-get="{% url 'sign_in' %}"
+        hx-target='#sign-form'
+        hx-trigger="click"
+        hx-swap="show:#base:bottom transition:true"
+        onclick="clearInnerHTML('error-msg')"
+        style="color: white">
+        Sign In
+    </button>
+</div>
+
+<script src="{% static 'js/clear-innerHTML.js' %}"></script>

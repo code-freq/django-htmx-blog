@@ -1,0 +1,96 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block title %}
+    Posts/Comments of {{ tag.name }} Tag
+{% endblock %}
+
+{% block content %}
+
+    {% block extra_styles %}
+        <link rel="stylesheet" href="{% static 'css/admin/tag_posts_comments.css' %}">
+    {% endblock %}
+
+    <div class="tag-details">
+        <h2>Posts and Comments for Tag: {{ tag.name }}</h2>
+
+        <h3>Posts</h3>
+        {% if posts %}
+            <table class="post-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in posts %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'admin:weblog_app_post_change' post.id %}">
+                                    {{ post.title }}
+                                </a>
+                            </td>
+
+                            <td>
+                                <a href="{% url 'admin:weblog_app_customuser_change' post.author.id %}">
+                                    {{ post.author }}
+                                </a>
+                            </td>
+                            <td>{{ post.created_at|date:'Y-m-d H:i' }}</td>
+                            <td>
+                                <a class="btn edit-btn" href="{% url 'admin:weblog_app_post_change' post.id %}">Edit</a>
+                                <a class="btn delete-btn" href="{% url 'admin:weblog_app_post_delete' post.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No posts available for this tag.</p>
+        {% endif %}
+
+        <h3>Comments</h3>
+        {% if comments %}
+            <table class="comment-table">
+                <thead>
+                    <tr>
+                        <th>Comment</th>
+                        <th>Post</th>
+                        <th>User</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'admin:weblog_app_comment_change' comment.id %}">
+                                    {{ comment.content }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'admin:weblog_app_post_change' comment.post.id %}">
+                                    {{ comment.post.title }}
+                                </a>
+                            </td>
+                            <td>{{ comment.user.username }}</td>
+                            <td>{{ comment.created_at|date:"Y-m-d H:i" }}</td>
+                            <td>
+                                <a class="btn edit-btn" href="{% url 'admin:weblog_app_comment_change' comment.id %}">Edit</a>
+                                <a class="btn delete-btn" href="{% url 'admin:weblog_app_comment_delete' comment.id %}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No comments available for this tag.</p>
+        {% endif %}
+
+        <a href="{% url 'admin:weblog_app_tag_changelist' %}" class="btn back-btn">Back to Tags</a>
+    </div>
+{% endblock %}

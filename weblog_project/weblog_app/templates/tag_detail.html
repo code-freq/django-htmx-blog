@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Tag: {{ tag.name }}
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="tag-header">
+    <h2>Tag: <span class="cat">{{ tag.name }}</span></h2>
+    <h3>Owner: <a class="owner" href="{% url 'user_profile' tag.user.id %}">{{ tag.user }}</a></h3>
+</div>
+
+{% if page_obj %}
+    <div class="posts-list">
+        {% for obj in page_obj %}
+            <hr class="post-hr">
+            <div class="post-item" id="item-{{ obj.item.id }}">
+                {% if obj.type == 'post' %}
+                    <!-- Posts -->
+                    <a class="title" href="{% url 'post_detail' obj.item.id %}">
+                        <div class="title-container">
+                           {{ obj.item.title }}
+                        </div>
+                    </a>
+                    <div class="outer-div">
+                        <div class="pp-img-div">
+                            <a href="{% url 'user_profile' obj.item.author.id %}">
+                                <img src="{{ obj.item.author.profile_picture.url }}" alt="Profile Image" class="profile-image">
+                            </a>
+                        </div>
+                        <div class="info-div">
+                            <p class="id"><strong>Post ID:</strong> {{ obj.item.id }}</p>
+                            <p class="author"><strong>Author:</strong> {{ obj.item.author }}</p>
+                            <p class="date"><strong>Date:</strong> {{ obj.item.created_at }}</p>
+                            <p class="category-div"><strong>Category:</strong>
+                                {% for category in obj.item.categories.all %}
+                                    <a class="category" href="{% url 'category_detail' category.id %}">{{ category.name }}</a>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="inner-hr">
+                    <div class="post">
+                        <div class="post-content" id="post-{{ obj.item.id }}">
+                            {{ obj.item.content|safe }}
+                        </div>
+                        <a class="read-more"
+                               id="read-more-{{ obj.item.id }}"
+                               hx-get="{% url 'full_content' obj.item.id %}"
+                               hx-trigger="click"
+                               hx-target="#item-{{ obj.item.id }}"
+                               hx-swap="outerHTML">
+                            Read More
+                        </a>
+                    </div>
+
+                {% elif obj.type == 'comment' %}
+                    <!-- Comments -->
+                    <div class="comment-item">
+                        <div class="comment-left">
+                            <a href="{% url 'user_profile' obj.item.user.id %}">
+                                <img src="{{ obj.item.user.profile_picture.url }}"
+                                     alt="{{ obj.item.user.username }}'s profile picture"
+                                     class="profile-image-comment">
+                            </a>
+                        </div>
+
+                        <div class="comment-right">
+                            <div class="comment-info">
+                                <div>
+                                    <strong class="username">
+                                        <a href="{% url 'user_profile' obj.item.user.id %}">{{ obj.item.user.username }}</a>
+                                    </strong>
+
+                                    <span class="post-info">
+                                        commented on
+                                        <a href="{% url 'post_detail' obj.item.post.id %}">{{ obj.item.post.title }}</a>
+                                    </span>
+                                </div>
+                                <span class="date-comment">{{ obj.item.created_at|date:'F j, Y, g:i a' }}</span>
+
+                            </div>
+                            <div class="content-section">
+                                <div class="comment-content">
+                                    {{ obj.item.content }}
+                                    {% for tag in obj.item.tags.all %}
+                                        <a href="{% url 'tag_detail' tag.pk %}">#{{ tag.name }}</a>
+                                    {% endfor %}
+                                </div>
+                                <div class="heart-div-2">
+                                    ❤<span class="num-2"> {{ obj.item.total_likes }}</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                {% endif %}
+            </div>
+        {% if obj.type == 'post' %}
+            <div class="tag-section">
+                <div class="tags">
+                    <strong class="tags">Tags:</strong>
+                    {% for tag in obj.item.tags.all %}
+                        {% if tag.pk %}
+                            <a href="{% url 'tag_detail' tag.pk %}">#{{ tag.name }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="heart-div">
+                    ❤<span class="num"> {{ obj.item.total_likes }}</span>
+                </div>
+            </div>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; First</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+{% else %}
+    <p class="no-posts">No posts or comments available for this tag.</p>
+{% endif %}
+
+<script src="{% static 'js/show-read-more.js' %}"></script>
+{% endblock %}

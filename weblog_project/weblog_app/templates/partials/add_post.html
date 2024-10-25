@@ -1,0 +1,84 @@
+{% load static %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/add_post.css' %}">
+{% endblock %}
+
+<div class="main-div">
+    <h2>
+        {% if is_edit %}
+            Edit Post
+        {% else %}
+            Add Post
+        {% endif %}
+    </h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'add_post' %}">
+        {% csrf_token %}
+        {{ form.media }}
+
+        <div class="form-group">
+            {{ form.title }}
+        </div>
+        <br>
+        <div class="form-group">
+            {{ form.content }}
+        </div>
+        <br>
+
+        <div class="flex-group">
+            <div class="category-tag1">
+                <div class="form-group">
+                    <div class="inner-group1">
+                        <label id="category">Categories</label>
+                        {{ form.categories }}
+                    </div>
+                    <div class="inner-group2">
+                        <label class="add-category">Add New Category</label>
+                        {{ form.new_category }}
+                        <button type="button"
+                                class="btn-add-category"
+                                hx-post="{% url 'add_category' %}"
+                                hx-include="[name=new_category]"
+                                hx-target="#id_categories"
+                                hx-swap="beforeend">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-tag2">
+                <div class="form-group">
+                    <div class="inner-group1">
+                        <label id="tag">Tags</label>
+                        {{ form.tags }}
+                    </div>
+                    <div class="inner-group2">
+                        <label class="add-tag">Add New Tag</label>
+                        {{ form.new_tag }}
+                        <button type="button"
+                                class="btn-add-tag"
+                                hx-post="{% url 'add_tag' %}"
+                                hx-include="[name=new_tag]"
+                                hx-target="#id_tags"
+                                hx-swap="beforeend">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="message-area"></div>
+
+        <button type="submit" class="btn btn-primary">
+            {% if is_edit %}
+                Edit Post
+            {% else %}
+                Add Post
+            {% endif %}
+        </button>
+    </form>
+</div>
+
+<!-- Script to display messages -->
+<script src="{% static 'js/display-msg.js' %}"></script>

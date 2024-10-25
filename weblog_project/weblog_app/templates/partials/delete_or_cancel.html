@@ -1,0 +1,25 @@
+{% load static %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/delete_or_cancel.css' %}">
+{% endblock %}
+
+<div class="button-group">
+    <p style="color:darkgreen;font-size:18px">Are you sure?</p>
+
+    <button
+        class="remove-btn"
+        hx-get="{% url 'remove_picture' %}"
+        hx-target="#dynamic-content"
+        hx-swap="innerHTML">
+        Remove
+    </button>
+
+    <button
+        type="button"
+        class="cancel-btn"
+        hx-get="{% url 'cancel_action' %}"
+        hx-target="#dynamic-content">
+        Cancel
+    </button>
+</div>

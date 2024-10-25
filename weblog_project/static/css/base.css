@@ -1,0 +1,49 @@
+.baseDiv {
+    margin: 35px auto 0px auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    word-wrap: break-word
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0 auto;
+    font-family: Courier, monospace;
+    overflow: scroll;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    padding: 0;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0px 6px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+img {
+    border-radius: 5px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}

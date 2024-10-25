@@ -1,0 +1,38 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/update_profile.css' %}">
+{% endblock %}
+
+<form method="POST" enctype="multipart/form-data"
+    hx-post="{% url 'update_profile' %}"
+    hx-target="#dynamic-content"
+    hx-swap="show:bottom">
+
+    {% csrf_token %}
+    <div class="edit-profile">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ form.username.value }}" maxlength="30" required>
+            <small class="error">{{ form.username.errors|join:' ' }}</small>
+        </div>
+
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" value="{{ form.first_name.value }}" maxlength="150" required>
+            <small class="error">{{ form.first_name.errors|join:' ' }}</small>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" value="{{ form.last_name.value }}" maxlength="150" required>
+            <small class="error">{{ form.last_name.errors|join:' ' }}</small>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" maxlength="50" required>{{ form.bio.value }}</textarea>
+        </div>
+
+        <button type="submit" class="update-btn2">Update Profile</button>
+    </div>
+</form>

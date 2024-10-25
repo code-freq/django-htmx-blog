@@ -1,0 +1,116 @@
+.object.header {
+    margin-bottom: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #652659;
+}
+
+.header {
+    text-align: center;
+}
+
+h1.header, h2.header {
+    color:#652659
+}
+
+.object {
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%
+}
+
+.object.right {
+    width: 97.5%;
+}
+
+.object.welcome {
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button.enter {
+    background-color: #3a8f3a;
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+}
+
+button.enter:hover {
+    background-color: #166816ab;
+}
+
+.object.adjust {
+    margin-bottom:0px;
+    padding-bottom:0px
+}
+
+.content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content p {
+    text-align:justify
+}
+
+strong {
+    color: #80c7e6;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+h2 {
+    color: #ac6931;
+}
+
+.error {
+    color: #a81c41;
+    text-align: center;
+    margin-top:5px
+}
+
+.object.form {
+    margin-bottom: 0px;
+    display: block;
+    width:50%;
+    text-align: left;
+    margin: 0 auto
+}
+
+.object.form label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.object.form input {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.object.form small {
+    display: block;
+    justify-content: space-between;
+    max-width: 90%;
+    text-align:center
+}
+
+.success {
+    color: #89aa00ed;
+    text-align:center;
+    font-size: 18px
+}

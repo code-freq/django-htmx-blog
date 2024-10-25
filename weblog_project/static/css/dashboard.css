@@ -1,0 +1,137 @@
+.add_post-btn {
+    padding: 8px 16px;
+    height: auto;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4083e1e7;
+    color: white;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.add_post-btn:hover {
+    background-color: #255697b5;
+}
+
+.header {
+    color: darkorange;
+    margin-top: 0;
+    font-size: 45px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ffffffb5;
+    text-align: center;
+    font-size: 16px;
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: #716e6e45;
+    font-weight: bold;
+    color: #ea935dc2;
+}
+
+table td {
+    color: #53d8ccd7;
+    background-color: #0000008c;
+}
+
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #2a9d58b3;
+    color: white;
+    margin: 0;
+    width:100%;
+    margin-bottom:10px
+}
+
+.edit-btn:hover {
+    background-color: #216737a1;
+}
+
+.delete-btn {
+    background-color: #df5d3ca9;
+    color: white;
+    margin: 0;
+    width:100%
+}
+
+.delete-btn:hover {
+    background-color: #98382bc3;
+}
+
+.no-posts {
+    background-color: #f9f9f9;
+    padding: 20px 0px 10px 7px;
+    border-radius: 5px;
+    text-align: left;
+    color: #fd3a28b6;
+    font-size: 18px;
+}
+
+.actions {
+    justify-content: center;
+}
+
+.success {
+    color: #48b648;
+    font-weight: bold;
+    text-align: center
+}
+
+.row:hover {
+    background-color: #505050b2;
+}
+
+.row a {
+    color: #64b9d8d6;
+}
+
+.row a:hover {
+    color: #6890ffd6;
+}
+
+.id-tr th {
+    min-width:35px
+}
+
+.id-tr th a{
+    color: #ea935dc2;
+}
+
+.id-tr th span {
+    font-weight: bold;
+    position: relative;
+    top: -3px;
+    vertical-align: middle;
+}
+
+span {
+    font-weight: bold;
+    color: #ff0000fa
+}

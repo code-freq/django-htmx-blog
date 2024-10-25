@@ -1,0 +1,14 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/welcome.css' %}">
+{% endblock %}
+
+<div class="object welcome"
+    hx-get="{% url 'sign_buttons' %}"
+    hx-target='#sign-btns'
+    hx-swap="show:#base:bottom transition:true"
+    hx-trigger="load delay:0.5s">
+    <h2 class="header">
+        Welcome to the Blog ❤
+    </h2>
+</div>

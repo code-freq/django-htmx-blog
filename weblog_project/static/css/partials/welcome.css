@@ -1,0 +1,13 @@
+.object.welcome {
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #781414;
+    margin-top:0px;
+    padding-top:0px
+}
+
+.header {
+    text-align: center;
+}

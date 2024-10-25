@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Welcome {{ user.first_name }} ❤
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="object adjust adj2" id="welcome-div">
+    <h1 class="header" >Welcome to the Blog {{ user.first_name }}!</h1>
+    <p>
+        We are thrilled to have you join our blog! This platform allows everyone to share their thoughts and engage in discussions on a variety of topics.
+        We are excited to see you here and are always ready to assist you on your blogging journey.
+    </p>
+
+    <p>
+        On our blog, you can explore the latest posts, browse interesting content, and connect with other members of the community.
+        If you ever need help or have any questions, feel free to reach out to our support team.
+    </p>
+
+    <div class="quick-access">
+        <h2>Quick Access</h2>
+        <button class="quick-btn" onclick="location.href='/blog/latest-posts'">Latest Blog Posts</button>
+        <button class="quick-btn" onclick="location.href='/profile'">View Your Profile</button>
+        <button class="quick-btn" onclick="location.href='/settings'">Account Settings</button>
+        <button class="quick-btn" onclick="location.href='/support'">Support</button>
+    </div>
+
+    <div id="welcome-footer">
+        <p>We are excited to have you here! Explore, engage, share, and enjoy!</p>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+.post-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content {
+    margin: 0 auto;
+    overflow: auto;
+    box-sizing: border-box;
+    word-wrap: break-word
+}
+
+.post-item {
+    height: auto;
+    padding: 10px 20px;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    background-color: #acacac18;
+}
+
+.title-container {
+    text-align: center;
+}
+
+.title:hover {
+    text-decoration: underline
+}
+
+strong {
+    color: #74d89fd0;
+}
+
+.author {
+    color: #e025e6e8;
+    font-size:18px;
+    margin-bottom:3px;
+    margin-top:0px;
+    font-family: Courier, monospace;
+}
+
+.inner-hr {
+    margin-bottom: 10px;
+    border: 1px solid #8c8c8c
+}
+
+.date {
+    color: wheat;
+    font-size:17px;
+    margin: 3px 0;
+    font-family: Courier, monospace;
+}
+
+.id {
+    color: #6174d6c3;
+    font-size:18px;
+    margin-bottom: 3px;
+    font-family: Courier, monospace;
+}
+
+.profile-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.outer-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top:10px
+}
+
+.info-div {
+    margin-bottom:11px
+}
+
+.tags {
+    color: #ffe900d0;
+}
+
+.tags a:hover {
+    font-weight: bold
+}
+
+.category a:hover {
+    font-weight: bold
+}
+
+.category-div {
+    color: wheat;
+    font-size:17px;
+    margin-top:0px;
+    margin-bottom:0px;
+    font-family: Courier, monospace;
+}
+
+.outer-div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top:10px
+}
+
+.info-div {
+    margin-bottom:11px
+}
+
+.profile-image:hover {
+    border: 3px solid #ff9100;
+    margin-right: 17.2px;
+    margin-left:-2.9px
+}
+
+.category {
+    margin-top:0px;
+    margin-bottom:0px
+}
+
+.category:hover {
+    font-weight: bold;
+}
+
+.pp-img-div {
+    margin-bottom:-16px
+}
+
+.post-item {
+    padding: 10px 15px;
+    border: 1px solid #8c8c8c;
+    border-radius: 5px;
+    background-color: #acacac18;
+}
+
+.post {
+    margin: 0 auto;
+    text-align: center
+}

@@ -1,0 +1,63 @@
+.form-group {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #9c2c13;
+    width:100%
+}
+
+.form-group textarea {
+    max-width:200px;
+    min-width:200px;
+    height:18px;
+    max-height:50px;
+    min-height:18px;
+}
+
+.edit-profile {
+    display: block;
+    max-width: 210px;
+    min-width: 210px;
+    margin-right: 30px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.object.form small {
+    display: block;
+    justify-content: space-between;
+    max-width: 90%;
+    text-align:center
+}
+
+.update-btn2 {
+    background-color: #da4ae4d5;
+    color: white;
+    display:flex;
+    max-width: 202px;
+    min-width: 202px;
+    justify-content: center;
+    margin: 10px 0px 0px -1px;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-btn2:hover {
+    background-color:#a12baab3
+}
+
+.error {
+    color: #a81c41;
+    text-align: center;
+    margin-top:5px
+}

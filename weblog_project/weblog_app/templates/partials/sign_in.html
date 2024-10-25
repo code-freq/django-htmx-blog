@@ -1,0 +1,37 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/sign_in.css' %}">
+{% endblock %}
+
+<form class="object adjust"
+    hx-post="{% url 'sign_in_form' %}"
+    hx-trigger="click"
+    hx-target="#error-msg"
+
+    hx-swap="show:#base:bottom"
+    hx-include="form"
+    method="post">
+    {% csrf_token %}
+    <div class="object adjust">
+        <div class="object form">
+            <label for="username">Username:</label>
+            <input maxlength="150" type="text" id="username" name="username" required>
+        </div>
+
+        <div class="object form">
+            <label for="password">Password:</label>
+            <input maxlength="150" type="password" id="password" name="password" required>
+        </div>
+
+        <div class="remember">
+            <label for="remember_me">
+                <input type="checkbox" name="remember_me" id="remember_me" checked> Remember Me
+            </label>
+        </div>
+
+        <div class="object">
+            <button class="submit_btn" type="submit">Log In</button>
+        </div>
+        <div id="error-msg"></div>
+    </div>
+</form>

@@ -1,0 +1,128 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between
+}
+
+.info-div {
+    max-width: 400px;
+    padding: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    align-self:flex-start;
+}
+
+.header.adjust {
+    margin-top:0px;
+    margin-bottom:10px;
+    font-size:80px;
+    font-family: 'Tangerine', serif;
+    text-align: center;
+    color: #652659;
+    display: block
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+strong {
+    color: #80c7e6;
+}
+
+.user-posts {
+    text-align: left;
+    max-width:400px;
+    justify-content:flex-end;
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 0px 10px;
+    border: 1px solid #cccccc61;
+    border-radius:5px;
+    background-color: #97979717;
+}
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content:flex-end
+}
+
+.post-item {
+    border: 1px solid #80c8d1ca;
+    padding: 5px;
+    max-width: 375px;
+    min-width: 375px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+.post-item:hover {
+    background-color: #aaaaaa25;
+    box-shadow: 0 4px 8px rgba(24, 85, 177, 0.3),
+                0 -4px 8px rgba(24, 85, 177, 0.3),
+                -4px 0 8px rgba(24, 85, 177, 0.3),
+                4px 0 8px rgba(24, 85, 177, 0.3);
+}
+
+.post-item h3 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    margin-top:0px;
+    color: #aaaaaa;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.post-item p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.post-item .tag {
+    display: inline-block;
+    background-color: #f2f2f2;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.see-all-posts {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #15bdc3b8;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.see-all-posts:hover {
+    background-color: #149297b0;
+}
+
+h2 {
+    color: #0b5f83e2;
+    text-align: center;
+    margin: 5px 0
+}
+
+.category:hover, .tag-link:hover {
+    font-weight:bold
+}

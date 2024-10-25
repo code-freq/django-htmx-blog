@@ -1,0 +1,6 @@
+.field-title, .field-author {
+    max-width:195px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,18 @@
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/partials/update_picture.css' %}">
+{% endblock %}
+
+<form method="POST" enctype="multipart/form-data" action="{% url 'update_picture' %}">
+    {% csrf_token %}
+    <div class="custom-file-upload">
+        <input type="file" id="profile_picture" name="profile_picture" class="file-input" accept="image/*"
+               onchange="updateFileName()">
+        <label for="profile_picture" class="file-label">Choose a picture</label>
+        <span class="file-chosen">Not chosen yet</span>
+    </div>
+
+    <button type="submit" class="update-btn">Update Picture</button>
+</form>
+
+<script src="{% static 'js/update-filename.js' %}"></script>

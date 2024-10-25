@@ -1,0 +1,59 @@
+.users-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width:60%;
+    margin: 0 auto;
+}
+
+.user-pp {
+    display: flex;
+    width: 480px;
+    align-items: center;
+    background-color: #aaaaaa18;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.user-pp:hover {
+    background-color: #aaaaaa25;
+    box-shadow: 0 4px 8px rgba(49, 197, 134, 0.3),
+                0 -4px 8px rgba(49, 197, 134, 0.3),
+                -4px 0 8px rgba(49, 197, 134, 0.3),
+                4px 0 8px rgba(49, 197, 134, 0.3);
+}
+
+.pp-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-right: 25px;
+    object-fit: cover;
+}
+
+.user-info {
+    display: block;
+    flex-direction: column;
+    max-width:350px
+}
+
+.username {
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 5px;
+    margin-top:-5px;
+    font-family: 'Tangerine', serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bio {
+    font-size: 14px;
+    color: wheat;
+    font-style:bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

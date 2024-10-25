@@ -1,0 +1,107 @@
+.header.adjust.adj2 {
+    margin-bottom:0px;
+    color:#83372ac8
+}
+
+.header.adjust {
+    margin-top:0px;
+    margin-bottom:20px;
+    font-size:80px;
+    font-family: 'Tangerine', serif;
+}
+
+.object.form {
+    margin-bottom: 0px;
+    display: block;
+    width:50%;
+    text-align: left;
+    margin: 0 auto
+}
+
+.object.form label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.object.form input {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.remember {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 10px;
+}
+
+.remember input {
+    margin-right: 1px;
+    position: relative;
+    top: 2.3px;
+}
+
+.remember label {
+    font-size: 14px;
+    color: lightgray;
+}
+
+.object {
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%
+}
+
+.object.adjust {
+    margin-bottom:0px;
+    padding-bottom:0px
+}
+
+.submit_btn {
+    background-color: #8a1e4a;
+    color: white;
+    margin: 10px 50px 10px 0px;
+    padding: 13px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-btn {
+    background-color: #21b589d7;
+    color: white;
+    margin: 10px 50px 10px 0px;
+    padding: 13px 23px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.submit_btn:hover {
+    background-color: #811a44bb;
+}
+
+.register-btn:hover {
+    background-color: #178060ba;
+}
+
+.object {
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%
+}
+
+.header {
+    text-align: center;
+}
+
+.error {
+    color: #a81c41;
+    text-align: center;
+    margin-top:5px
+}

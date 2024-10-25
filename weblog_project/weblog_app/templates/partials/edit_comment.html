@@ -1,0 +1,9 @@
+<form method = "post"
+      hx-post="{% url 'edit_comment' comment.pk %}"
+      hx-trigger="submit"
+      hx-target="#name-{{ comment.pk }}"
+      hx-swap="outerHTML">
+    {% csrf_token %}
+
+    <input maxlength="200" type="text" class="form-control" name="content" value="{{ comment.content }}{% for tag in comment.tags.all %}#{{ tag.name }} {% endfor %}">
+</form>

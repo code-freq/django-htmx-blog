@@ -1,0 +1,15 @@
+{% load static %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/edit_category.css' %}">
+{% endblock %}
+
+<form method = "post"
+      hx-post="{% url 'tag_edit' tag.pk %}"
+      hx-trigger="submit"
+      hx-target="#name-{{ tag.pk }}"
+      hx-swap="innerHTML">
+    {% csrf_token %}
+
+    <input type="text" id="tag-name-input" name="name" value="{{ tag.name }}" class="form-control">
+</form>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Take Care {{ name }}❤
+{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="object header"><h1 class="header">We will miss you {{ name }} ❤</h1></div>
+
+<div class="object">
+    <img class="logout" src="{% static 'images/freq2.png' %}" alt="Frequency Photo">
+</div>
+
+{% endblock %}
