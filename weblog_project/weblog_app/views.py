@@ -1,6 +1,8 @@
+from django.contrib.auth.password_validation import validate_password
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.messages.context_processors import messages
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login, logout
 from django.core.paginator import Paginator
@@ -792,6 +794,35 @@ def delete_comment(request, pk):
 @login_required(login_url='/login/')
 def account_settings(request):
     return render(request, "partials/settings.html")
+
+# Change Password
+@login_required(login_url='/login/')
+def change_password(request):
+    # If the request method is POST
+    if request.method == 'POST':
+        # Get the new password from the form
+        new_password = request.POST.get('password')
+
+        try:
+            # Check if the new password is valid
+            validate_password(new_password, user=request.user)
+
+            request.user.set_password(new_password)  # Set the new password
+            request.user.save()  # Save the user
+            login(request, request.user)  # Log in the user
+            messages.success(request, "Password updated successfully!")  # Show success message
+            return redirect("/profile/")  # Redirect to profile
+
+        except ValidationError as e:
+            # Show error messages if the new password is invalid
+            for message in e.messages:
+                messages.error(request, message)
+
+            return redirect("/profile/")  # Redirect to profile
+
+    else:
+        # Return a 400 error if the request method is not POST
+        return HttpResponse(status=400)
 
 # Change Email
 @login_required(login_url='/login/')

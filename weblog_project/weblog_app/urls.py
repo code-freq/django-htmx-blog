@@ -64,5 +64,6 @@ urlpatterns = [
     path("account-settings/", views.account_settings, name="account_settings"),
     path('change-email/', views.change_email, name='change_email'),
     path("delete_account/", views.delete_account, name="delete_account"),
+    path("change_password/", views.change_password, name="change_password"),
 ]
 
