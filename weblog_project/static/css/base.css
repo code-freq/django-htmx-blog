@@ -2,22 +2,42 @@
     margin: 35px auto 0px auto;
     max-width: 800px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #98989898;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(227, 227, 227, 0.1);
+    background-color: #68686838;
     word-wrap: break-word
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    background-color: #000000f0;
+    color:white;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+    background: #515151bb;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #686868;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a3a3a3e5;
 }
 
 body {
     margin: 0 auto;
     font-family: Courier, monospace;
-    overflow: scroll;
+    overflow: auto;
     line-height: 1.6;
+}
+
+p,li {
+    color:white;
 }
 
 header {

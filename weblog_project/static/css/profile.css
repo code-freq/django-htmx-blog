@@ -29,7 +29,7 @@ strong {
     font-size:80px;
     font-family: 'Tangerine', serif;
     text-align: center;
-    color: #652659
+    color: #d541b4
 }
 
 .profile-details {
@@ -37,7 +37,7 @@ strong {
     flex-direction: column;
     max-width:265px;
     min-width:265px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc86;
     border-radius: 5px;
     padding:10px
 }
@@ -60,9 +60,8 @@ strong {
     min-width: 200px;
     margin-right: 30px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc7b;
     border-radius: 5px;
-    background-color: #f9f9f9;
 }
 
 .profile-image-section {
@@ -78,13 +77,13 @@ strong {
     justify-content: flex-start;
     max-width: 200px;
     min-width: 200px;
-    max-height: auto;
+    height:auto;
     margin-bottom: 20px;
     margin-right: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid #8e8e8ed5;
     border-radius: 5px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #3c3c3c;
     word-break: break-word
 }
 
@@ -96,7 +95,7 @@ strong {
     margin-left: 12px;
     margin-right: 4px;
     font-size: 14px;
-    color: #555;
+    color: #b3b3b3;
     line-height:1;
     text-align:center;
 }
@@ -157,7 +156,7 @@ strong {
     font-size: 14px;
     margin:0px;
     margin-top:5px;
-    color:#6c6c6c
+    color:#c5c5c5e0
 }
 
 .settings-btn:hover {
@@ -190,4 +189,47 @@ strong {
     margin-bottom: 20px;
     margin-right: 32px;
     padding: 10px;
+}
+
+.update-btn {
+    background-color: #216831;
+    color: white;
+    display:inline;
+    margin-top: 10px;
+    margin-left: 51px;
+    border: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-btn:hover {
+    background-color: #0e6105;
+}
+
+.file-label {
+    background-color: #365b83;
+    color: white;
+    padding: 10px 5px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom:0.01px;
+    line-height:1;
+    height:24px;
+    max-width: 70px;
+    min-width: 70px;
+    text-align:center;
+    font-family: Arial, sans-serif;
+    transition: 0.1s;
+}
+
+.file-label:hover {
+    background-color: #1d4671
+}
+
+.error {
+    color: red
 }

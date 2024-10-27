@@ -39,11 +39,11 @@
 
             <div class="nav-container nav-right">
                 {% if user.is_authenticated %}
-                    <a class="username-nav" href="/profile" style="color: #503450">{{ user.username }}</a>
-                    <a href="/dashboard" style="color: #32770c">Dashboard</a>
-                    <a href="/logout" style="color: #e44e0e">Logout</a>
+                    <a class="username-nav" href="/profile" style="color: #d513d5cd">{{ request.user.username }}</a>
+                    <a href="/dashboard" style="color: #56d514cd">Dashboard</a>
+                    <a href="/logout" style="color: #e44e0edd">Log out</a>
                 {% else %}
-                    <a style="color: #e6871f;cursor:pointer"
+                    <a style="color: #e6871fe8;cursor:pointer"
                         hx-get="{% url 'sign_in' %}"
                         hx-target="#base"
                         hx-vals='{"source": "navbar"}'>

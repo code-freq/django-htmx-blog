@@ -36,7 +36,7 @@
                 {% if tag.pk %}
                     <tr>
                         <td id="name-{{ tag.pk }}" class="name">
-                            <a href="{% url 'tag_detail' tag.pk %}">{{ tag.name }}</a>
+                            <a class="name" href="{% url 'tag_detail' tag.pk %}">{{ tag.name }}</a>
                         </td>
                         <td class="owner">
                             <a href="{% url 'user_profile' tag.user.id %}">{{ tag.user }}</a></td>
@@ -87,7 +87,7 @@
     </div>
 
 {% else %}
-    <p>No tags available.</p>
+    <p style="color:darkred">No tags available.</p>
 {% endif %}
 
 {% endblock %}

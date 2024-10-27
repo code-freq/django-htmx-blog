@@ -17,8 +17,8 @@
     </div>
     <div class="outer-div">
         <div class="pp-img-div">
-            <a href="{% url 'user_profile' user.id %}">
-                <img src="{{ user.profile_picture.url }}" alt="Profile Image" class="profile-image">
+            <a href="{% url 'user_profile' post.author.id %}">
+                <img src="{{ post.author.profile_picture.url }}" alt="Profile Image" class="profile-image">
             </a>
         </div>
         <div class="info-div">
@@ -60,7 +60,7 @@
             <li class="comment-item">
                 <div class="profile-pic">
                     <a href="{% url 'user_profile' comment.user.id %}">
-                        <img src="{{ comment.user.profile_picture.url }}" alt="Profile Picture of {{ comment.user }}">
+                        <img src="{{ comment.user.profile_picture.url }}" alt="Profile Picture of {{ comment.user }}" class="profile-image cmnt-img">
                     </a>
                 </div>
                 <div class="comment-content">

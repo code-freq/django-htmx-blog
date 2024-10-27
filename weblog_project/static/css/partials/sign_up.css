@@ -1,7 +1,15 @@
 .error {
-    color: #a81c41;
+    color: red;
     text-align: center;
     margin-top:5px
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    background-color: #616161;
+    color: white;
 }
 
 .submit_btn {

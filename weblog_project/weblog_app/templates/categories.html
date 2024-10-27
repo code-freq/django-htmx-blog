@@ -24,9 +24,9 @@
     <table class="category-table">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Owner</th>
-                <th>Posts</th>
+                <th class="name">Name</th>
+                <th class="owner">Owner</th>
+                <th class="posts">Posts</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -85,7 +85,7 @@
     </div>
 
 {% else %}
-    <p>No categories available.</p>
+    <p style="color:darkred">No categories available.</p>
 {% endif %}
 
 {% endblock %}

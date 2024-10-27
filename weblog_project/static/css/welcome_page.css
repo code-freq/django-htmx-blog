@@ -39,9 +39,11 @@
 }
 
 .quick-btn {
-    background-color: #27674cb5;
+    background-color: #183bccba;
     color: white;
     padding: 10px 20px;
+    max-width: 165px;
+    min-width: 165px;
     margin: 10px 10px;
     border: none;
     border-radius: 5px;
@@ -50,6 +52,9 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.btn-2 {
+    background-color: #c61313be;
+}
 .quick-btn:hover {
     background-color: #1a5630be;
     color: #f0f0f0;

@@ -7,16 +7,23 @@
 .form-group label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #9c2c13;
+    color: #ea6041;
     width:100%
 }
 
 .form-group textarea {
-    max-width:200px;
-    min-width:200px;
+    max-width:204px;
+    min-width:204px;
     height:18px;
     max-height:50px;
     min-height:18px;
+    background-color: #1c1c1cca;
+    color: #dfb76aa1;
+    border-radius: 5px
+}
+
+.form-group textarea:focus {
+    color:wheat
 }
 
 .edit-profile {
@@ -27,7 +34,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #7c7c7c5a;
 }
 
 .object.form small {
@@ -41,10 +48,10 @@
     background-color: #da4ae4d5;
     color: white;
     display:flex;
-    max-width: 202px;
-    min-width: 202px;
+    max-width: 209px;
+    min-width: 209px;
     justify-content: center;
-    margin: 10px 0px 0px -1px;
+    margin: 10px 0px 0px 0px;
     border: none;
     padding: 10px 12px;
     cursor: pointer;
@@ -60,4 +67,14 @@
     color: #a81c41;
     text-align: center;
     margin-top:5px
+}
+
+input {
+   background-color: #1c1c1cca;
+    color: #b8b8b8;
+    border-radius: 5px
+}
+
+input:focus {
+    color:white
 }

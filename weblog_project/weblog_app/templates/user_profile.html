@@ -39,8 +39,8 @@
                 <div class="post-item"
                      data-url="{% url 'post_detail' post.id %}"
                      onclick="goToLink(this)">
-                    <h3>{{ post.title }}</h3>
-                    <p style="color:#256a0dc2"><span style="font-weight:bold">Category:</span>
+                    <h3 style="color:#d8c0f8ec;font-size:24px">{{ post.title }}</h3>
+                    <p style="color:#379e13c2"><span style="font-weight:bold">Category:</span>
                         {% for category in post.categories.all %}
                             <a class="category" href="{% url 'category_detail' category.id %}">{{ category.name }}</a>
                         {% endfor %}

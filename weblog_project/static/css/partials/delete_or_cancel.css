@@ -22,13 +22,13 @@
 }
 
 .remove-btn {
-    background-color: #e42e0e;
+    background-color: #ca2d11;
     color: white;
 }
 
 .cancel-btn {
-    background-color: #97959594;
-    color: black;
+    background-color: #cacaca94;
+    color: white;
 }
 
 .remove-btn:hover {
@@ -36,5 +36,5 @@
 }
 
 .cancel-btn:hover  {
-    background-color: #7876767c;
+    background-color: #8f8f8f99;
 }

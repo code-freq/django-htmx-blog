@@ -59,11 +59,11 @@ strong {
 }
 
 .post-item {
-    border: 1px solid #80c8d1ca;
+    border: 1px solid #47757aca;
     padding: 5px;
     max-width: 375px;
     min-width: 375px;
-    background-color: #f9f9f9;
+    background-color: #020202;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     cursor: pointer;

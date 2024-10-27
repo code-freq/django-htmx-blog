@@ -9,10 +9,10 @@ h2 {
     width: 100%;
     padding: 10px 0px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #aeaeae;
     border-radius: 5px;
     font-size: 16px;
-    background-color: #d5d5d5c3;
+    background-color: #575757d8;
     color: wheat;
     font-family: Courier, monospace;
     text-align: center;
@@ -27,13 +27,17 @@ h2 {
     font-weight:normal
 }
 
+#id_title::placeholder {
+    color: white;
+}
+
 #cke_id_content {
     width: 100%;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    background-color: #d5d5d5c3;
+    background-color: #505050c3;
     color: wheat;
     font-family: Courier, monospace;
     text-align: center;
@@ -61,7 +65,12 @@ button:hover {
 }
 
 .form-group #cke_1_top {
-    background-color: #d5d5d5c3;
+    background-color: #686868dd;
+    color:white
+}
+
+.form-group #cke_1_bottom {
+    background-color: #686868dd;
 }
 
 .category-tag1, .category-tag2 {
@@ -69,7 +78,7 @@ button:hover {
     border: 1px solid #e8e8e8;
     border-radius: 5px;
     padding: 0px 10px 0px 10px;
-    background-color: #d5d5d5c3;
+    background-color: #5353538e;
     width: 48%;
     box-sizing: border-box;
 }
@@ -129,9 +138,9 @@ button:hover {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #474747;
     font-size: 14px;
-    color: #333;
+    color: #d5d5d5;
     font-weight: bold;
     font-family: Courier, monospace;
 }
@@ -166,14 +175,15 @@ button:hover {
     height: 110px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #717171;
     font-size: 14px;
     color: #333;
 }
 
 #id_tags option, #id_categories option {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #9f9f9f;
+    color: #252525;
+    border-bottom: 1px solid #686868;
     font-weight: bold;
     font-family: Courier, monospace;
 }

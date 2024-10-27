@@ -12,7 +12,8 @@
             Add Post
         {% endif %}
     </h2>
-    <form method="post" enctype="multipart/form-data" action="{% url 'add_post' %}">
+    <form method="post" enctype="multipart/form-data"
+          action="{% if is_edit %}{% url 'edit_post' post.id %}{% else %}{% url 'add_post' %}{% endif %}">
         {% csrf_token %}
         {{ form.media }}
 

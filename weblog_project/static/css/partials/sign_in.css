@@ -5,6 +5,13 @@
     margin: 0 auto
 }
 
+input {
+    border-radius: 5px;
+    background-color: #616161;
+    border: none;
+    color: white;
+}
+
 .object.form {
     margin-bottom: 0px;
     display: block;
@@ -73,7 +80,7 @@
 }
 
 .error {
-    color: darkred;
+    color: red;
 }
 
 .error-msg {

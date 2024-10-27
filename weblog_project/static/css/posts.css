@@ -80,11 +80,12 @@ strong {
 
 .inner-hr {
     margin-bottom: 10px;
-    border: 1px solid #8c8c8c
+    border: 1px solid #8c8c8c98
 }
 
 .post-hr {
     margin: 10px 0;
+    border: 1px solid #a8a8a8ca
 }
 
 .date {
@@ -129,7 +130,6 @@ strong {
 .post-content p {
     margin-bottom: 15px;
     line-height: 1.6;
-    color:inherit;
 }
 
 .read-more {
@@ -208,11 +208,12 @@ strong {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
+    border: 3px solid #ffffff00;
 }
 
 .profile-image-comment {
-    width: 103px;
-    height: 103px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
@@ -252,8 +253,6 @@ strong {
 
 .profile-image:hover {
     border: 3px solid #ff9100;
-    margin-right: 17.2px;
-    margin-left:-2.9px
 }
 
 .category {

@@ -23,6 +23,13 @@ h2 {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: #171717;
+    color: #c1c1c1;
+    text-align: center
+}
+
+.email-input:focus {
+    color:white
 }
 
 label {
@@ -44,7 +51,7 @@ label {
 
 .delete-account-btn {
     background-color: darkred;
-    color:#737373;
+    color:#b8b8b8;
     margin-top:0px;
     max-width:131px;
     min-width:131px;

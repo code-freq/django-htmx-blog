@@ -10,25 +10,25 @@ h1 {
     width: 90%;
     border-collapse: collapse;
     margin: 0 auto 20px auto;
-    border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .category-table th, .category-table td {
     padding: 10px;
-    border: 1px solid #ffffffb5;
+    border: 1px solid #989898b5;
     text-align: center;
 }
 
 .category-table th {
     background-color: #716e6e45;
     font-weight: bold;
-    color: #647013;
+    color: #a8bc1c;
+    max-width:80px;
+    text-align: center;
 }
 
 .category-table tbody tr:hover {
-    background-color: #e0e0e076; /* Hover sırasında açık gri arka plan */
+    background-color: #e0e0e025; /* Hover sırasında açık gri arka plan */
 }
 
 .btn {
@@ -77,14 +77,20 @@ h1 {
     text-align: center
 }
 
-.name a:hover, .owner a:hover {
+.name:hover, .owner a:hover {
     font-weight: bold;
 }
 
+.name, .owner a {
+    color: #886ff1df;
+}
+
 .form-control {
-    color: #29128fdf;
+    color: #bab1e1;
     text-align: center;
-    max-width: 135px
+    max-width: 135px;
+    background-color: #000000e0;
+    border-radius:5px
 }
 
 .success {
@@ -117,10 +123,8 @@ td.owner, th.owner {
     min-width: 150px;
 }
 
-tr th.posts,
-tr td.posts ,
-tr th.comments,
-tr td.comments {
-    max-width:80px;
-    text-align: center;
+td.name, th.name {
+    min-width: 150px;
 }
+
+

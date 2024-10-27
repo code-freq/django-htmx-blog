@@ -10,6 +10,13 @@
     font-family: 'Tangerine', serif;
 }
 
+input {
+    border-radius: 5px;
+    border: none;
+    background-color: #575757;
+    color: white
+}
+
 .object.form {
     margin-bottom: 0px;
     display: block;
@@ -101,7 +108,7 @@
 }
 
 .error {
-    color: #a81c41;
+    color: red;
     text-align: center;
     margin-top:5px
 }

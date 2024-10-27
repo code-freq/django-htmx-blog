@@ -166,8 +166,11 @@ def update_picture(request):
     # Get current user profile picture
     form = forms.ProfilePictureForm(request.POST or None, request.FILES or None, instance=request.user)
     if request.method == "POST":
-        if form.is_valid():
+        if form.is_valid() and request.FILES:
             # Get and check file size
+            print(request)
+            print(request.FILES)
+            print(request.FILES['profile_picture'])
             image = request.FILES['profile_picture']
             if image.size > 1 * 1024 * 1024:  # 1 MB
                 messages.error(request, 'File size is too large. Max size is 1 MB'),
@@ -186,6 +189,7 @@ def update_picture(request):
                 # Remove if there is a file
                 if os.path.isfile(current_pic_path):
                     os.remove(current_pic_path)
+
             # Save the form and set success message
             form.save()
             messages.success(request, 'Profile picture updated successfully.')
@@ -376,7 +380,7 @@ def add_post(request):
 def edit_post(request, post_id):
     Post = models.Post.objects.get(id=post_id)  # Get the post by id
     if request.method == 'POST':
-        form = forms.PostForm(request.POST)  # Get post form
+        form = forms.PostForm(request.POST, instance=Post)  # Get post form with the old form data
         if form.is_valid():
             form.save()  # Save the post
             form.save_m2m()  # Save the categories/tags (many to many fields)
@@ -390,10 +394,10 @@ def edit_post(request, post_id):
             messages.error(request, 'Something went wrong :(')
             return render(request, 'partials/add_post.html', {'form': form, 'is_edit': True})
 
-    # If method is GET, render the form with the old form data and 'is_edit' flag
+    # If method is GET, render the form with the old form data, 'Post' object and 'is_edit' flag
     else:
         form = forms.PostForm(instance=Post)
-        return render(request, 'partials/add_post.html', {'form': form, 'is_edit': True})
+        return render(request, 'partials/add_post.html', {'form': form, 'is_edit': True, 'post': Post})
 
 # Delete Post
 @login_required(login_url='/login/')
@@ -468,6 +472,7 @@ def post_detail(request, post_id):
 
             comment_data = form.cleaned_data['content']  # Get the content of the comment
             hashtags = re.findall(r'#\w+', comment_data)  # Find all hashtags in the comment with regex
+            comment.save()  # Save the comment
 
             # Check if there is a tag that is longer than 15 characters
             invalid = False
@@ -479,6 +484,7 @@ def post_detail(request, post_id):
             # If there is no invalid tag, create or get the tag, remove the tag from the comment,
             # add the tag to the comment's tags, and save the comment
             if not invalid:
+                comment.save()
                 for tag in hashtags:
                     tag_name = tag[1:]
                     tag_obj, created = models.Tag.objects.get_or_create(name=tag_name, user=request.user)
@@ -531,7 +537,7 @@ def categories(request):
 
     page_number = request.GET.get('page')  # Get the page number from the URL
     items = paginator.get_page(page_number)  # Get the page object of categories
-
+    print(items)
     # Render the categories page with the page object
     return render(request, 'categories.html', {'items': items})
 
