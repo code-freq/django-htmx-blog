@@ -1,5 +1,7 @@
 # Django-HTMX Blog
 
+[freq.blog](http://freq.blog/)
+
 ## Description
 
 Django-HTMX Blog is a dynamic and interactive blog platform built with Django and HTMX. Designed to offer an engaging user experience, this project allows users to create, edit, and manage blog posts, organizing them with categories and tags, and engaging with posts through comments and likes.
